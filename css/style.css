@@ -107,7 +107,7 @@ a {
   flex-direction: column;
   padding: 0 10px;
   color: #000;
-  font-size: 13px;
+  font-size: 14px;
 }
 #force-tree-graph .node foreignObject div:hover{
     box-shadow: none;
@@ -149,9 +149,9 @@ a {
   margin: 0 auto 50px auto;
 }
 .connect{
+  margin-top: 110px;
   margin-bottom: 133px;
   width: 100%;
-  margin-top: 40px;
 }
 .connect > div{
   text-align: center;
@@ -181,6 +181,13 @@ a {
 }
 .street-fighter{
   position: relative;
+  margin-top: 110px;
+}
+.street-fighter h1{
+  margin: 0 auto;
+  width: 100px;
+  display: block;
+  text-transform: capitalize;
 }
 .street-fighter > div{
   margin: 0 auto;
