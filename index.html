@@ -7,64 +7,72 @@
         <meta content="crypto, wallet, dapp, ledger, oan" name="keywords">
         <meta content="Makkii is one stop crypto solution. It is designed to be open and public friendly." name="description">
         <link href="img/favicon.png" rel="icon">
-        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
-        <div class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><b>Makkii</b></a>
-                </div>
-                <!--
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#" class="smoothscroll">dev(coming)</a></li>
-                        <li><a href="#" class="smoothscroll">doc(coming)</a></li>
-                    </ul>
-                </div>
-                -->
+        <div class="navbar">
+            <a href="#"><b>Makkii</b></a>
+        </div>
+        <svg id="force-tree-graph">
+        </svg>
+
+        <!-- developers -->
+        <div class="doc">
+            <div>
+                    <h1>Dev & Docs</h1>
+                    <h3><a href="http://makkii.dev/makkii-js/" target="_blank">makkii-js</a></h3>
             </div>
         </div>
-        <div id="headerwrap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h1>We are makkii,<br/>so are you. :)</h1>
-                    </div>
-                    <div class="col-lg-6">
-                        <img class="img-responsive" src="img/ipad-hand.png" alt="">
-                    </div>
+
+        <div class="street-fighter">
+            <div>
+                <div member="Chris">
+                    <div><img src="img-member/member-chris.jpeg"/></div>
+                </div>
+                <div member="Leo">
+                    <div><img src="img-member/member-leo.jpg"/></div>
+                </div>
+                <div member="Camus">
+                    <div><img src="img-member/member-camus.jpeg"/></div>
+                </div>
+                <div member="Chencheng">
+                    <div><img src="img-member/member-chencheng.png"/></div>
+                </div>
+                <div member="Yuanjun Li">
+                    <div><img src="img-member/member-yuanjun%20Li.jpg"/></div>
+                </div>
+                <div member="Yangjun Wei">
+                    <div><img src="img-member/member-yangjun%20Wei.jpeg"/></div>
+                </div>
+                <div member="Fred">
+                    <div><img src="img-member/member-fred.png"/></div>
+                </div>
+                <div member="Vicky">
+                    <div><img src="img-member/member-vicky.jpg"/></div>
+                </div>
+                <div member="Carrie">
+                    <div><img src="img-member/member-carrie.jpg"/></div>
+                </div>
+                <div member="Derek">
+                    <div><img src="img-member/member-derek.png"/></div>
+                </div>
+                <div member="Miao shi">
+                    <div><img src="img-member/member-shimiao.png"/></div>
                 </div>
             </div>
         </div>
 
-        <!-- developers -->
-        <div class="container">
-            <div class="row mt centered">
-                <div class="col-lg-6 col-lg-offset-3">
-                    <h1>Dev & Docs</h1>
-                    <h3><a href="http://makkii.dev/makkii-js/" target="_blank">makkii-js</a></h3>
-                </div>
-            </div>
-        </div>
-        
         <!-- connect us -->
-        <div class="container">
-            <div class="row mt centered">
+        <div class="connect">
+            <div>
                 <div class="col-lg-6 col-lg-offset-3">
                     <h1>Connect</h1>
                 </div>
             </div>
-            <div class="row mt centered flex_center_row">
+            <div>
                 <a href="#" alt="">
                     <img src="img/wechat.svg">
-                </a> 
+                </a>
                 <a href="#" alt="qq">
                     <img src="img/qq.png">
                 </a>
@@ -89,38 +97,13 @@
             </div>
         </div>
 
-        <!-- friends -->
-        <div class="container">
-            <div class="row mt centered">
-                <div class="col-lg-6 col-lg-offset-3">
-                    <h1>Friends</h1>
-                </div>
-            </div>
-            <div class="row mt centered">
-                <div class="col-lg-3">
-                    <img src="img/oan.png" width="140" alt="oan">
-                </div>
-                <div class="col-lg-3">
-                    <img src="img/pokket.png" width="140" alt="pokket">
-                </div>
-                <div class="col-lg-3">
-                    <img src="img/chain-news.png" width="140" alt="chain news">
-                </div>
-                <div class="col-lg-3">
-                    <img src="img/coin-voice.png" width="140" alt="coin voice">
-                </div>
-            </div>
-        </div>
-
         <!-- copyrights -->
         <div id="copyrights">
-            <div class="container">
-            <p>&copy; Copyrights <strong>Makkii</strong>. All Rights Reserved</p>
+            <div>
+            <p>&copy; Copyrights Makkii. All Rights Reserved</p>
             </div>
         </div>
-        <script src="lib/jquery/jquery.min.js"></script>
-        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="//d3js.org/d3.v3.min.js"></script>
+        <script src="js/force-tree-graph.js"></script>
     </body>
 </html>
