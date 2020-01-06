@@ -1,4 +1,4 @@
-const size_map = {
+var size_map = {
     1: 140,
     2: 100,
     3: 80,
@@ -12,27 +12,28 @@ const size_map = {
     4: "#efdbff",
     5: "#ffd6e7"
 };*/
-const same_color = '#e8e8e8';
-const color_map = {
+var same_color = '#e8e8e8';
+var color_map = {
     1: same_color,
     2: same_color,
     3: same_color,
     4: same_color,
     5: same_color
 };
-let width = document.documentElement.clientWidth;
-let height = 1250;
-let root;
-let force = d3.layout.force()
+var width = document.documentElement.clientWidth;
+var height = 1250;
+console.log('宽高:', width, height)
+var root;
+var force = d3.layout.force()
     .size([width - 60, height])
     .on("tick", tick);
 
-let svg = d3.select("body #force-tree-graph")
-    .style("width", width)
+var svg = d3.select("body #force-tree-graph")
+    .attr("width", width)
     .attr("height", height);
-let link = svg.selectAll(".link");
-let   node = svg.selectAll(".node");
-let json_cache = null;
+var link = svg.selectAll(".link");
+var   node = svg.selectAll(".node");
+var json_cache = null;
 d3.json("../force-tree-graph.json", function(error, json) {
     if (error) throw error;
     root = json;
@@ -41,9 +42,8 @@ d3.json("../force-tree-graph.json", function(error, json) {
 });
 
 function update() {
-    let nodes = flatten(root),
+    var nodes = flatten(root),
         links = d3.layout.tree().links(nodes);
-
     // Restart the force layout.
     force
         .nodes(nodes)
@@ -73,7 +73,7 @@ function update() {
     node.exit().remove();
 
     // Enter any new nodes.
-    const g = node.enter()
+    var g = node.enter()
         .append('g')
         .attr("class", "node")
         .attr('width', function (d) {
@@ -88,7 +88,7 @@ function update() {
         .on("click", click)
         .call(force.drag)
         .attr('style', function (d) {
-            return `cursor: ${d.url ? 'pointer' : 'default'};`;
+            return 'cursor:' + (d.url ? 'pointer' : 'default') + ';';
         });
     g.append('foreignObject')
         .attr('width', function (d) {
@@ -98,8 +98,9 @@ function update() {
             return size_map[d.type]
         })
         .append(function (d) {
-            const div = document.createElementNS('http://www.w3.org/1999/xhtml', 'div');
-            div.setAttribute('style', `background-color: ${color_map[d.type]}`);
+            var div = document.createElement('div');
+            div.setAttribute('style', 'background-color: ' + color_map[d.type]);
+            div.setAttribute('xmlns','http://www.w3.org/1999/xhtml');
             div.innerText = d.name;
             div.setAttribute('title', d.url || '');
             div.setAttribute('class', 'circle');
@@ -138,7 +139,7 @@ function click(d) {
 }
 
 function flatten(root) {
-    let nodes = [], i = 0;
+    var nodes = [], i = 0;
     function recurse(node) {
         if (node.children) node.children.forEach(recurse);
         if (!node.id) node.id = ++i;
@@ -149,9 +150,9 @@ function flatten(root) {
     return nodes;
 }
 
-let timer = null;
+var timer = null;
 
-const onresize_fun = function(){
+var onresize_fun = function(){
     if(!json_cache) return;
     width = document.documentElement.clientWidth;
     if(width < 1200) width = 1200;
@@ -159,8 +160,8 @@ const onresize_fun = function(){
         .size([width - 60, height])
         .on("tick", tick);
 
-    let svg = d3.select("body #force-tree-graph")
-        .style("width", width)
+    var svg = d3.select("body #force-tree-graph")
+        .attr("width", width)
         .attr("height", height);
     link = svg.selectAll(".link");
     node = svg.selectAll(".node");
